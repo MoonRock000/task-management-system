@@ -7,4 +7,25 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  namespace :api do
+    resources :users, only: [] do
+      member do
+        get :tasks
+      end
+    end
+
+    resources :tasks, except: :show do
+      member do
+        post :assign
+        put :progress
+      end
+
+      collection do
+        get :overdue
+        get :completed
+        get :statistics
+        get 'status/:status', to: 'tasks#status', as: :status
+      end
+    end
+  end
 end
