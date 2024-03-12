@@ -1,24 +1,49 @@
-# README
+ # Task Management System
+This repository contains the source code for a Task Management System built with Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
+Ensure that you have the following tools installed on your system:
 
-Things you may want to cover:
+```
+GitHub
+Ruby 3.2.2
+Rails 7.1.2
+```
+## Getting Started
+Follow these steps to set up and run the project on your local machine.
 
-* Ruby version
+### 1. Clone the Repository
 
-* System dependencies
 
-* Configuration
+>git clone https://github.com/MoonRock000/task-management-system.git
 
-* Database creation
+### 2. Install the bundler
 
-* Database initialization
+Install the bundler using following command:
 
-* How to run the test suite
+>bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+### 2. Create and Setup the Database
+Run the following commands to create and set up the database.
+```
+bundle exec rake db:create
+bundle exec rake db:setup
+```
+### 3. Start the Rails Server
+Initiate the Rails server using the following command.
+```
+bundle exec rails s
+````
+>Now, you can access the site at http://localhost:3000.
 
-* Deployment instructions
+## Running Test Cases
+To run the test cases, execute the following commands:
 
-* ...
+
+```
+bundle exec rspec spec/requests/api/tasks_spec.rb
+bundle exec rspec spec/requests/api/users_spec.rb
+bundle exec rspec spec/models/task_queue_spec.rb
+bundle exec rspec spec/models/task_spec.rb
+bundle exec rspec spec/models/user_spec.rb
+```
